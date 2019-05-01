@@ -14,4 +14,16 @@
  * limitations under the License.
  */
 
-rootProject.name = 'auth0-oauth-authorization-plugin'
+package cd.go.authorization.auth0.models;
+
+public class LoggedInUserInfo {
+    private final User user;
+
+    public LoggedInUserInfo(String name, String email) {
+        user = new User(email, name, email);
+    }
+
+    public User getUser() {
+        return user;
+    }
+}

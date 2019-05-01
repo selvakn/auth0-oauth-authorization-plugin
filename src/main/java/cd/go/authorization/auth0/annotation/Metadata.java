@@ -14,4 +14,12 @@
  * limitations under the License.
  */
 
-rootProject.name = 'auth0-oauth-authorization-plugin'
+package cd.go.authorization.auth0.annotation;
+
+public interface Metadata {
+    boolean isRequired();
+
+    boolean isSecure();
+
+    FieldType getType();
+}

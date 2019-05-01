@@ -14,4 +14,13 @@
  * limitations under the License.
  */
 
-rootProject.name = 'auth0-oauth-authorization-plugin'
+package cd.go.authorization.auth0.models;
+
+import com.google.gson.annotations.SerializedName;
+
+public enum SupportedAuthType {
+    @SerializedName("password")
+    Password,
+    @SerializedName("web")
+    Web
+}

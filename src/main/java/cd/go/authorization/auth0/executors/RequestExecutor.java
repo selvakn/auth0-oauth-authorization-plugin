@@ -14,4 +14,11 @@
  * limitations under the License.
  */
 
-rootProject.name = 'auth0-oauth-authorization-plugin'
+package cd.go.authorization.auth0.executors;
+
+import com.thoughtworks.go.plugin.api.response.GoPluginApiResponse;
+
+public interface RequestExecutor {
+
+    GoPluginApiResponse execute() throws Exception;
+}

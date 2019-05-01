@@ -14,4 +14,20 @@
  * limitations under the License.
  */
 
-rootProject.name = 'auth0-oauth-authorization-plugin'
+package cd.go.authorization.auth0;
+
+import cd.go.authorization.auth0.models.Auth0Configuration;
+import com.auth0.client.auth.AuthAPI;
+import com.auth0.client.mgmt.ManagementAPI;
+
+public class Auth0ClientBuilder {
+
+    public AuthAPI authAPI(Auth0Configuration auth0Configuration) {
+        return new AuthAPI(auth0Configuration.authRequestUrl(), auth0Configuration.clientId(), auth0Configuration.clientSecret());
+    }
+
+    public ManagementAPI managementAPI(Auth0Configuration auth0Configuration, String apiToken) {
+        return new ManagementAPI(auth0Configuration.domain(), apiToken);
+    }
+
+}

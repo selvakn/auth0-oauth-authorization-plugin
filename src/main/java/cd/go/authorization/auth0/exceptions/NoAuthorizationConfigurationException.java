@@ -14,4 +14,10 @@
  * limitations under the License.
  */
 
-rootProject.name = 'auth0-oauth-authorization-plugin'
+package cd.go.authorization.auth0.exceptions;
+
+public class NoAuthorizationConfigurationException extends RuntimeException {
+    public NoAuthorizationConfigurationException(String message) {
+        super(message);
+    }
+}

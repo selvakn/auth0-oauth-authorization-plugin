@@ -15,19 +15,7 @@
   -->
 
 <div class="form_item_block">
-    <label ng-class="{'is-invalid-label': GOINPUTNAME[Organizations].$error.server}">GitHub organizations <small>(Enter comma-separated)</small>:</label>
-    <textarea ng-class="{'is-invalid-input': GOINPUTNAME[Organizations].$error.server}" ng-model="Organizations" ng-required="true" rows="5"></textarea>
-    <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[Organizations].$error.server}" ng-show="GOINPUTNAME[Organizations].$error.server">{{GOINPUTNAME[Organizations].$error.server}}</span>
-</div>
-
-<div class="form_item_block">
-    <label ng-class="{'is-invalid-label': GOINPUTNAME[Teams].$error.server}">GitHub teams <small>(Enter in <strong>OrganizationName: TeamA, TeamB...TeamN</strong> format)</small>:</label>
-    <textarea ng-class="{'is-invalid-input': GOINPUTNAME[Teams].$error.server}" ng-model="Teams" ng-required="true" rows="5"></textarea>
-    <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[Teams].$error.server}" ng-show="GOINPUTNAME[Teams].$error.server">{{GOINPUTNAME[Teams].$error.server}}</span>
-</div>
-
-<div class="form_item_block">
-    <label ng-class="{'is-invalid-label': GOINPUTNAME[Users].$error.server}">GitHub users <small>(Enter comma-separated)</small>:</label>
+    <label ng-class="{'is-invalid-label': GOINPUTNAME[Users].$error.server}">Users (emails) <small>(Enter comma-separated)</small>:</label>
     <textarea ng-class="{'is-invalid-input': GOINPUTNAME[Users].$error.server}" type="text"
               ng-model="Users" ng-required="true" rows="5"></textarea>
     <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[Users].$error.server}" ng-show="GOINPUTNAME[Users].$error.server">{{GOINPUTNAME[Users].$error.server}}</span>

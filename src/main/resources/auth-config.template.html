@@ -83,40 +83,10 @@
             border-radius: 3px;
         }
 
+
+
     </style>
 
-
-    <div class="form_item_block row" style="padding-top: 10px">
-        <div class="columns small-3 medium-2 larger-2">
-            <label>Authenticate with</label>
-        </div>
-        <div class="columns small-9 medium-10 larger-10" ng-init="AuthenticateWith = AuthenticateWith || 'GitHub'">
-            <input type="radio" ng-model="AuthenticateWith" value="GitHub" id="login-using-github"/>
-            <label for="login-using-github">GitHub</label>
-
-            <input type="radio" ng-model="AuthenticateWith" value="GitHubEnterprise" id="login-using-github-enterprise"/>
-            <label for="login-using-github-enterprise">GitHub Enterprise</label>
-            <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[AuthenticateWith].$error.server}" ng-show="GOINPUTNAME[AuthenticateWith].$error.server">{{GOINPUTNAME[AuthenticateWith].$error.server}}</span>
-        </div>
-    </div>
-
-    <div ng-show="AuthenticateWith == 'GitHubEnterprise'">
-        <div class="form_item_block">
-            <label ng-class="{'is-invalid-label': GOINPUTNAME[GitHubEnterpriseUrl].$error.server}">GitHub Enterprise
-                Url:<span class='asterix'>*</span>
-                <div class="tooltip-info">
-              <span class="tooltip-content">
-                GitHub enterprise url
-              </span>
-                </div>
-            </label>
-            <input ng-class="{'is-invalid-input': GOINPUTNAME[GitHubEnterpriseUrl].$error.server}" type="text"
-                   ng-model="GitHubEnterpriseUrl" ng-required="true"/>
-            <span class="form_error form-error"
-                  ng-class="{'is-visible': GOINPUTNAME[GitHubEnterpriseUrl].$error.server}"
-                  ng-show="GOINPUTNAME[GitHubEnterpriseUrl].$error.server">{{GOINPUTNAME[GitHubEnterpriseUrl].$error.server}}</span>
-        </div>
-    </div>
 
     <div class="form_item_block">
         <label ng-class="{'is-invalid-label': GOINPUTNAME[ClientId].$error.server}">OAuth Client ID:<span
@@ -127,7 +97,7 @@
               </span>
             </div>
         </label>
-        <input ng-class="{'is-invalid-input': GOINPUTNAME[ClientId].$error.server}" type="password" ng-model="ClientId"
+        <input ng-class="{'is-invalid-input': GOINPUTNAME[ClientId].$error.server}" type="text" ng-model="ClientId"
                ng-required="true"/>
         <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[ClientId].$error.server}"
               ng-show="GOINPUTNAME[ClientId].$error.server">{{GOINPUTNAME[ClientId].$error.server}}</span>
@@ -149,34 +119,33 @@
     </div>
 
     <div class="form_item_block">
-        <label ng-class="{'is-invalid-label': GOINPUTNAME[PersonalAccessToken].$error.server}">Personal Access
-            Token:<span class='asterix'>*</span>
+        <label ng-class="{'is-invalid-label': GOINPUTNAME[Domain].$error.server}">Domain:<span
+                class='asterix'>*</span>
             <div class="tooltip-info">
               <span class="tooltip-content">
-                Personal access token with read:org permission is required.
+                Configured Domain
               </span>
             </div>
         </label>
-        <input ng-class="{'is-invalid-input': GOINPUTNAME[PersonalAccessToken].$error.server}" type="password"
-               ng-model="PersonalAccessToken" ng-required="true"/>
-        <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[PersonalAccessToken].$error.server}"
-              ng-show="GOINPUTNAME[PersonalAccessToken].$error.server">{{GOINPUTNAME[PersonalAccessToken].$error.server}}</span>
+        <input ng-class="{'is-invalid-input': GOINPUTNAME[Domain].$error.server}" type="text"
+               ng-model="Domain" ng-required="true"/>
+        <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[Domain].$error.server}"
+              ng-show="GOINPUTNAME[Domain].$error.server">{{GOINPUTNAME[Domain].$error.server}}</span>
     </div>
 
     <div class="form_item_block">
-        <label ng-class="{'is-invalid-label': GOINPUTNAME[AllowedOrganizations].$error.server}">GitHub Organizations
-            <small>(Enter comma-separated)</small>
-            :
+        <label ng-class="{'is-invalid-label': GOINPUTNAME[CallbackURL].$error.server}">Callback URL:<span
+                class='asterix'>*</span>
             <div class="tooltip-info">
               <span class="tooltip-content">
-                Organizations simplify management of group-owned repositories (for example: your company's code), expand on our permissions system, and help focus your GitHub workflow for business and large open source projects.
+                Callback URL configured in the oauth config
               </span>
             </div>
         </label>
-        <textarea ng-class="{'is-invalid-input': GOINPUTNAME[AllowedOrganizations].$error.server}" rows="5"
-                  ng-model="AllowedOrganizations" ng-required="true"></textarea>
-        <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[AllowedOrganizations].$error.server}"
-              ng-show="GOINPUTNAME[AllowedOrganizations].$error.server">{{GOINPUTNAME[AllowedOrganizations].$error.server}}</span>
+        <input ng-class="{'is-invalid-input': GOINPUTNAME[CallbackURL].$error.server}" type="text"
+               ng-model="CallbackURL" ng-required="true"/>
+        <span class="form_error form-error" ng-class="{'is-visible': GOINPUTNAME[CallbackURL].$error.server}"
+              ng-show="GOINPUTNAME[CallbackURL].$error.server">{{GOINPUTNAME[CallbackURL].$error.server}}</span>
     </div>
 
 </div>

@@ -18,17 +18,17 @@ apply plugin: 'java'
 apply from: "https://raw.githubusercontent.com/gocd/gocd-plugin-gradle-task-helpers/master/helper.gradle?_=${(int) (new Date().toInstant().epochSecond / 60)}"
 
 gocdPlugin {
-  id = 'cd.go.authorization.github'
-  pluginVersion = '3.0.1'
+  id = 'cd.go.authorization.auth0'
+  pluginVersion = '1.0.0'
   goCdVersion = '19.2.0'
-  name = 'GitHub OAuth authorization plugin'
-  description = 'GitHub OAuth authorization plugin for GoCD'
+  name = 'Auth0 OAuth authorization plugin'
+  description = 'Auth0 OAuth authorization plugin for GoCD'
   vendorName = 'ThoughtWorks, Inc.'
-  vendorUrl = 'https://github.com/gocd-contrib/github-oauth-authorization-plugin'
+  vendorUrl = 'https://auth0.com/gocd-contrib/auth0-oauth-authorization-plugin'
 
   githubRepo {
     owner = System.getenv('GITHUB_USER') ?: 'bob'
-    repo = 'github-oauth-authorization-plugin'
+    repo = 'auth0-oauth-authorization-plugin'
     token = System.getenv('GITHUB_TOKEN') ?: 'bad-token'
   }
 
@@ -52,7 +52,7 @@ repositories {
 dependencies {
     compileOnly group: 'cd.go.plugin', name: 'go-plugin-api', version: '17.5.0'
     compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
-    compile group: 'org.kohsuke', name: 'github-api', version: '1.95'
+    compile group: 'com.auth0', name: 'auth0', version: '1.13.1'
     compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.14.0'
 
     testCompile group: 'cd.go.plugin', name: 'go-plugin-api', version: '17.4.0'
