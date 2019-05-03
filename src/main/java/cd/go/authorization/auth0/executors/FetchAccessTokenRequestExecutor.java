@@ -27,7 +27,6 @@ import com.auth0.json.auth.TokenHolder;
 import com.auth0.net.AuthRequest;
 import com.thoughtworks.go.plugin.api.response.DefaultGoPluginApiResponse;
 import com.thoughtworks.go.plugin.api.response.GoPluginApiResponse;
-import okhttp3.OkHttpClient;
 
 import static cd.go.authorization.auth0.Auth0Plugin.LOG;
 
@@ -35,10 +34,6 @@ public class FetchAccessTokenRequestExecutor implements RequestExecutor {
     private final FetchAccessTokenRequest request;
 
     public FetchAccessTokenRequestExecutor(FetchAccessTokenRequest request) {
-        this(request, new OkHttpClient());
-    }
-
-    FetchAccessTokenRequestExecutor(FetchAccessTokenRequest request, OkHttpClient httpClient) {
         this.request = request;
     }
 
